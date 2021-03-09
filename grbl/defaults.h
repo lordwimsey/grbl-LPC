@@ -30,21 +30,21 @@
 #ifdef DEFAULTS_GENERIC
   // Grbl generic default settings. Should work across different machines.
   // See https://github.com/gnea/grbl/wiki/Grbl-v1.1-Configuration for setting descriptions.
-  #define DEFAULT_X_STEPS_PER_MM 250.0       // $100 steps (X steps per mm)
-  #define DEFAULT_Y_STEPS_PER_MM 250.0       // $101 steps (Y steps per mm)
-  #define DEFAULT_Z_STEPS_PER_MM 250.0       // $102 steps (Z steps per mm)
+  #define DEFAULT_X_STEPS_PER_MM 160.0       // $100 steps (X steps per mm)
+  #define DEFAULT_Y_STEPS_PER_MM 160.0       // $101 steps (Y steps per mm)
+  #define DEFAULT_Z_STEPS_PER_MM 1600.0       // $102 steps (Z steps per mm)
   #define DEFAULT_A_STEPS_PER_MM 160.0       // $103 steps (A steps per mm)
-  #define DEFAULT_X_MAX_RATE 500.0           // $110 mm/min (X max speed)
-  #define DEFAULT_Y_MAX_RATE 500.0           // $111 mm/min (Y max speed)
-  #define DEFAULT_Z_MAX_RATE 500.0           // $112 mm/min (Z max speed)
-  #define DEFAULT_A_MAX_RATE 500.0           // $113 mm/min (A max speed)
+  #define DEFAULT_X_MAX_RATE 30000.0           // $110 mm/min (X max speed) //Peter: war 500
+  #define DEFAULT_Y_MAX_RATE 30000.0           // $111 mm/min (Y max speed) //Peter: war 500
+  #define DEFAULT_Z_MAX_RATE 30000.0           // $112 mm/min (Z max speed) //Peter: war 500
+  #define DEFAULT_A_MAX_RATE 30000.0           // $113 mm/min (A max speed) //Peter: war 500
   #define DEFAULT_X_ACCELERATION (10.0*60*60)// $120 mm/min^2 (X max acceleration)
   #define DEFAULT_Y_ACCELERATION (10.0*60*60)// $121 mm/min^2 (Y max acceleration)
   #define DEFAULT_Z_ACCELERATION (10.0*60*60)// $122 mm/min^2 (Z max acceleration)
   #define DEFAULT_A_ACCELERATION (10.0*60*60)// $123 mm/min^2 (A max acceleration)
-  #define DEFAULT_X_MAX_TRAVEL 200.0         // $130 mm (X max travel; must be positive)
-  #define DEFAULT_Y_MAX_TRAVEL 200.0         // $131 mm (Y max travel; must be positive)
-  #define DEFAULT_Z_MAX_TRAVEL 200.0         // $132 mm (Z max travel; must be positive)
+  #define DEFAULT_X_MAX_TRAVEL 600.0         // $130 mm (X max travel; must be positive) //Peter: war 200
+  #define DEFAULT_Y_MAX_TRAVEL 400.0         // $131 mm (Y max travel; must be positive) //Peter: war 200
+  #define DEFAULT_Z_MAX_TRAVEL 170.0         // $132 mm (Z max travel; must be positive) //Peter: war 200
   #define DEFAULT_A_MAX_TRAVEL 1.0           // $133 mm (A max travel; must be positive)
   #define DEFAULT_X_CURRENT 0.6              // $140 amps (X stepper current [disabled])
   #define DEFAULT_Y_CURRENT 0.6              // $141 amps (Y stepper current [disabled])
@@ -64,15 +64,15 @@
   #define DEFAULT_REPORT_INCHES 0            // $13 bool (sets position reporting to inches)
   #define DEFAULT_SOFT_LIMIT_ENABLE 0        // $20 bool (prevents moves outside *_MAX_TRAVEL; requires $23=1)
   #define DEFAULT_HARD_LIMIT_ENABLE 0        // $21 bool ([ignored] stops moving when limit switches triggered)
-  #define DEFAULT_HOMING_ENABLE 0            // $22 bool (enables homing on startup)
-  #define DEFAULT_HOMING_DIR_MASK 0          // $23 ZYX (e.g., 0x3 reverses XY homing to negative direction)
+  #define DEFAULT_HOMING_ENABLE 0            // $22 bool (enables homing on startup) //Peter: war 0
+  #define DEFAULT_HOMING_DIR_MASK 1          // $23 ZYX (e.g., 0x3 reverses XY homing to negative direction) //Peter: war 0
   #define DEFAULT_HOMING_FEED_RATE 25.0      // $24 mm/min (homing precision location speed)
   #define DEFAULT_HOMING_SEEK_RATE 500.0     // $25 mm/min (homing search speed)
   #define DEFAULT_HOMING_DEBOUNCE_DELAY 250  // $26 msec (homing switch debounce: 0-65k)
   #define DEFAULT_HOMING_PULLOFF 1.0         // $27 mm (retracts this far from homing switch)
   #define DEFAULT_SPINDLE_RPM_MAX 1000.0     // $30 RPM (spindle speed for max 5V PWM output)
   #define DEFAULT_SPINDLE_RPM_MIN 0.0        // $31 RPM (spindle speed for min 20mV PWM output)
-  #define DEFAULT_LASER_MODE 0               // $32 bool (adjusts spindle power with speed for lasers)
+  #define DEFAULT_LASER_MODE 1               // $32 bool (adjusts spindle power with speed for lasers)  //Peter: war 0
   #define DEFAULT_SPINDLE_PWM_FREQ 5000      // $33 Hz (PWM frequency for spindle)
   #define DEFAULT_SPINDLE_PWM_OFF_VALUE 0    // $34 % (% of PWM when spindle is off)
   #define DEFAULT_SPINDLE_PWM_MIN_VALUE 1    // $35 % (% of PWM when spindle is at lowest setting)
@@ -85,11 +85,11 @@
   // Description: K40 Lasercutter (typical chinese 40W CO2 laser cutter/engraver)
   #define DEFAULT_X_STEPS_PER_MM 160.0      // 200 stepps/rev. * 32 microstepps / 40mm/rev
   #define DEFAULT_Y_STEPS_PER_MM 160.0
-  #define DEFAULT_Z_STEPS_PER_MM 160.0
+  #define DEFAULT_Z_STEPS_PER_MM 1600   //Peter: war 160.0
   #define DEFAULT_A_STEPS_PER_MM 160.0
-  #define DEFAULT_X_MAX_RATE 24000.0        // mm/min
-  #define DEFAULT_Y_MAX_RATE 24000.0        // mm/min
-  #define DEFAULT_Z_MAX_RATE 24000.0        // mm/min
+  #define DEFAULT_X_MAX_RATE 30000.0  //Peter: war 24000.0        // mm/min
+  #define DEFAULT_Y_MAX_RATE 30000.0  //Peter: war 24000.0        // mm/min
+  #define DEFAULT_Z_MAX_RATE 30000.0  //Peter: war 24000.0        // mm/min
   #define DEFAULT_A_MAX_RATE 24000.0        // mm/min
   #define DEFAULT_X_ACCELERATION (2500.0*60*60) // 2500*60*60 mm/min^2 = 2500 mm/sec^2
   #define DEFAULT_Y_ACCELERATION (2500.0*60*60) // 2500*60*60 mm/min^2 = 2500 mm/sec^2
@@ -99,9 +99,9 @@
   #define DEFAULT_Y_CURRENT 0.6             // amps
   #define DEFAULT_Z_CURRENT 0.0             // amps
   #define DEFAULT_A_CURRENT 0.0             // amps
-  #define DEFAULT_X_MAX_TRAVEL 300.0        // mm NOTE: Must be a positive value.
-  #define DEFAULT_Y_MAX_TRAVEL 200.0        // mm NOTE: Must be a positive value.
-  #define DEFAULT_Z_MAX_TRAVEL 50.0         // mm NOTE: Must be a positive value.
+  #define DEFAULT_X_MAX_TRAVEL 600.0        // mm NOTE: Must be a positive value. //Peter: war 300
+  #define DEFAULT_Y_MAX_TRAVEL 400.0        // mm NOTE: Must be a positive value. //Peter: war 200
+  #define DEFAULT_Z_MAX_TRAVEL 170.0         // mm NOTE: Must be a positive value. //Peter: war 24000.0
   #define DEFAULT_A_MAX_TRAVEL 100.0        // mm NOTE: Must be a positive value.
   #define DEFAULT_SPINDLE_PWM_FREQ 5000     // Hz (2000 - 20000)
   #define DEFAULT_SPINDLE_PWM_OFF_VALUE 0   // %

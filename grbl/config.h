@@ -32,10 +32,10 @@
 
 
 // Define board type for pin map and default settings.
-#define CPU_MAP_SMOOTHIEBOARD   // Smoothieboard (NXP LPC1769 MCU)
+// #define CPU_MAP_SMOOTHIEBOARD   // Smoothieboard (NXP LPC1769 MCU) //Peter: war einkommentiert
 //#define CPU_MAP_C3D_REMIX       // Cohesion3D Remix (NXP LPC1769 MCU)
 //#define CPU_MAP_C3D_MINI        // Cohesion3D Mini (NXP LPC1769 MCU)
-//#define CPU_MAP_MKS_SBASE       // MKS SBASE Board (NXP LPC1768 MCU)
+#define CPU_MAP_MKS_SBASE       // MKS SBASE Board (NXP LPC1768 MCU) //Peter: war auskommentiert
 //#define CPU_MAP_AZTEEG_X5       // Azteeg X5 Board (NXP LPC1769 MCU)
 
 // Force other Spindle PWM Pin (default is P2.5)
@@ -44,7 +44,7 @@
 
 // Define machine type for machine specific defaults
 //#define DEFAULTS_GENERIC
-#define DEFAULTS_K40
+#define DEFAULTS_K40  //Peter: die Werte waren fast richtig. Sind editiert in defaults.h
 //#define DEFAULTS_FABKIT
 //#define DEFAULTS_JONAS
 

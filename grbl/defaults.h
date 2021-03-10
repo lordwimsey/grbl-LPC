@@ -128,8 +128,11 @@
   #define DEFAULT_HOMING_FEED_RATE 50.0     // mm/min
   #define DEFAULT_HOMING_SEEK_RATE 600.0   // mm/min  //Peter: war 6000
   #define DEFAULT_HOMING_DEBOUNCE_DELAY 250 // msec (0-65k)
-  #define DEFAULT_HOMING_PULLOFF 2.0        // mm
-  #define HOMING_CYCLE_0 ((1<<X_AXIS)|(1<<Y_AXIS))
+  #define DEFAULT_HOMING_PULLOFF 5.0        // mm //Peter: war 2.0mm, aber das reicht nicht für die Schalter. Ggf. Schalterposition nochmal anpassen.
+//  #define HOMING_CYCLE_0 ((1<<X_AXIS)|(1<<Y_AXIS)) Peter: war einkommentiert. Wenn Y läuft, wieder scharf machen.
+  #define HOMING_CYCLE_0 (1<<X_AXIS)  // COREXY COMPATIBLE: First home X //Peter: war gar nicht hier. Wenn Y läuft, obige Zeile einkommentieren und diese löschen.
+  #define HOMING_CYCLE_1 (1<<Y_AXIS)  // COREXY COMPATIBLE: Then home Y//Peter: war gar nicht hier. Wenn Y läuft, obige Zeile einkommentieren und diese löschen.
+
 #endif // end of DEFAULTS_K40
 
 #ifdef DEFAULTS_FABKIT

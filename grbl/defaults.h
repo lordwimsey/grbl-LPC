@@ -83,8 +83,8 @@
 
 #ifdef DEFAULTS_K40
   // Description: K40 Lasercutter (typical chinese 40W CO2 laser cutter/engraver)
-  #define DEFAULT_X_STEPS_PER_MM 160.0      // 200 stepps/rev. * 32 microstepps / 40mm/rev
-  #define DEFAULT_Y_STEPS_PER_MM 160.0
+  #define DEFAULT_X_STEPS_PER_MM 80.0      // 200 stepps/rev. * 32 microstepps / 40mm/rev //Peter: war 160
+  #define DEFAULT_Y_STEPS_PER_MM 80.0 //Peter: war 160
   #define DEFAULT_Z_STEPS_PER_MM 1600   //Peter: war 160.0
   #define DEFAULT_A_STEPS_PER_MM 160.0
   #define DEFAULT_X_MAX_RATE 30000.0  //Peter: war 24000.0        // mm/min
@@ -126,7 +126,7 @@
   #define DEFAULT_HOMING_ENABLE 1           // true
   #define DEFAULT_HOMING_DIR_MASK 1         // move top/left
   #define DEFAULT_HOMING_FEED_RATE 50.0     // mm/min
-  #define DEFAULT_HOMING_SEEK_RATE 6000.0   // mm/min
+  #define DEFAULT_HOMING_SEEK_RATE 600.0   // mm/min  //Peter: war 6000
   #define DEFAULT_HOMING_DEBOUNCE_DELAY 250 // msec (0-65k)
   #define DEFAULT_HOMING_PULLOFF 2.0        // mm
   #define HOMING_CYCLE_0 ((1<<X_AXIS)|(1<<Y_AXIS))

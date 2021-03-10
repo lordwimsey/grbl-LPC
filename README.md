@@ -1,5 +1,8 @@
 ![GitHub Logo](https://github.com/gnea/gnea-Media/blob/master/Grbl%20Logo/Grbl%20Logo%20250px.png?raw=true)
 
+Please note, this is for my DIY Lasercutter!
+
+
 ***
 Old releases are in the `Release` tab. See [cprezzi's branch](https://github.com/cprezzi/grbl-LPC) for more recent releases.
 Note: cprezzi's branch disables current control and has defaults more suitable for other boards.

@@ -91,17 +91,17 @@
   #define DEFAULT_Y_MAX_RATE 30000.0  //Peter: war 24000.0        // mm/min
   #define DEFAULT_Z_MAX_RATE 30000.0  //Peter: war 24000.0        // mm/min
   #define DEFAULT_A_MAX_RATE 24000.0        // mm/min
-  #define DEFAULT_X_ACCELERATION (2500.0*60*60) // 2500*60*60 mm/min^2 = 2500 mm/sec^2
-  #define DEFAULT_Y_ACCELERATION (2500.0*60*60) // 2500*60*60 mm/min^2 = 2500 mm/sec^2
-  #define DEFAULT_Z_ACCELERATION (2500.0*60*60) // 2500*60*60 mm/min^2 = 2500 mm/sec^2
+  #define DEFAULT_X_ACCELERATION 3500 // 2500*60*60 mm/min^2 = 2500 mm/sec^2 //Peter: war (2500.0*60*60)
+  #define DEFAULT_Y_ACCELERATION 2500 // 2500*60*60 mm/min^2 = 2500 mm/sec^2 //Peter: war (2500.0*60*60)
+  #define DEFAULT_Z_ACCELERATION 2500 // 2500*60*60 mm/min^2 = 2500 mm/sec^2 //Peter: war (2500.0*60*60)
   #define DEFAULT_A_ACCELERATION (2500.0*60*60) // 2500*60*60 mm/min^2 = 2500 mm/sec^2
   #define DEFAULT_X_CURRENT 0.6             // amps
   #define DEFAULT_Y_CURRENT 0.6             // amps
   #define DEFAULT_Z_CURRENT 0.0             // amps
   #define DEFAULT_A_CURRENT 0.0             // amps
-  #define DEFAULT_X_MAX_TRAVEL 600.0        // mm NOTE: Must be a positive value. //Peter: war 300
-  #define DEFAULT_Y_MAX_TRAVEL 400.0        // mm NOTE: Must be a positive value. //Peter: war 200
-  #define DEFAULT_Z_MAX_TRAVEL 170.0         // mm NOTE: Must be a positive value. //Peter: war 24000.0
+  #define DEFAULT_X_MAX_TRAVEL 565.0        // mm NOTE: Must be a positive value. //Peter: war 300
+  #define DEFAULT_Y_MAX_TRAVEL 380.0        // mm NOTE: Must be a positive value. //Peter: war 200
+  #define DEFAULT_Z_MAX_TRAVEL 170.0         // mm NOTE: Must be a positive value. //Peter: war 100
   #define DEFAULT_A_MAX_TRAVEL 100.0        // mm NOTE: Must be a positive value.
   #define DEFAULT_SPINDLE_PWM_FREQ 5000     // Hz (2000 - 20000)
   #define DEFAULT_SPINDLE_PWM_OFF_VALUE 0   // %
@@ -125,13 +125,11 @@
   #define DEFAULT_LASER_MODE 1              // true
   #define DEFAULT_HOMING_ENABLE 1           // true
   #define DEFAULT_HOMING_DIR_MASK 1         // move top/left
-  #define DEFAULT_HOMING_FEED_RATE 50.0     // mm/min
-  #define DEFAULT_HOMING_SEEK_RATE 600.0   // mm/min  //Peter: war 6000
+  #define DEFAULT_HOMING_FEED_RATE 600.0     // mm/min //Peter: war 50
+  #define DEFAULT_HOMING_SEEK_RATE 4800.0   // mm/min  //Peter: war 6000
   #define DEFAULT_HOMING_DEBOUNCE_DELAY 250 // msec (0-65k)
   #define DEFAULT_HOMING_PULLOFF 5.0        // mm //Peter: war 2.0mm, aber das reicht nicht für die Schalter. Ggf. Schalterposition nochmal anpassen.
-//  #define HOMING_CYCLE_0 ((1<<X_AXIS)|(1<<Y_AXIS)) Peter: war einkommentiert. Wenn Y läuft, wieder scharf machen.
-  #define HOMING_CYCLE_0 (1<<X_AXIS)  // COREXY COMPATIBLE: First home X //Peter: war gar nicht hier. Wenn Y läuft, obige Zeile einkommentieren und diese löschen.
-  #define HOMING_CYCLE_1 (1<<Y_AXIS)  // COREXY COMPATIBLE: Then home Y//Peter: war gar nicht hier. Wenn Y läuft, obige Zeile einkommentieren und diese löschen.
+  #define HOMING_CYCLE_0 ((1<<X_AXIS)|(1<<Y_AXIS)) //Peter: home both X and Y simultanously
 
 #endif // end of DEFAULTS_K40
 

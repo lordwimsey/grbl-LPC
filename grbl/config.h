@@ -138,7 +138,7 @@
 // After homing, Grbl will set by default the entire machine space into negative space, as is typical
 // for professional CNC machines, regardless of where the limit switches are located. Uncomment this
 // define to force Grbl to always set the machine origin at the homed location despite switch orientation.
-#define HOMING_FORCE_SET_ORIGIN // Uncomment to enable. //Peter: war auskommentiert
+#define HOMING_FORCE_SET_ORIGIN // Uncomment to enable. //Peter: war auskommentiert TEst
 
 // Uncomment this define to force Grbl to always set the machine origin at bottom left.
 // #define HOMING_FORCE_POSITIVE_SPACE // Uncomment to enable. //Peter: war einkommentiert

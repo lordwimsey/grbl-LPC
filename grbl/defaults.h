@@ -99,7 +99,7 @@
   #define DEFAULT_Y_CURRENT 0.6             // amps
   #define DEFAULT_Z_CURRENT 0.0             // amps
   #define DEFAULT_A_CURRENT 0.0             // amps
-  #define DEFAULT_X_MAX_TRAVEL 565.0        // mm NOTE: Must be a positive value. //Peter: war 300
+  #define DEFAULT_X_MAX_TRAVEL 570.0        // mm NOTE: Must be a positive value. //Peter: war 300
   #define DEFAULT_Y_MAX_TRAVEL 380.0        // mm NOTE: Must be a positive value. //Peter: war 200
   #define DEFAULT_Z_MAX_TRAVEL 170.0         // mm NOTE: Must be a positive value. //Peter: war 100
   #define DEFAULT_A_MAX_TRAVEL 100.0        // mm NOTE: Must be a positive value.
@@ -111,7 +111,7 @@
   #define DEFAULT_SPINDLE_RPM_MIN 0.0       // rpm (S-value)
   #define DEFAULT_STEP_PULSE_MICROSECONDS 10
   #define DEFAULT_STEPPING_INVERT_MASK 0
-  #define DEFAULT_DIRECTION_INVERT_MASK 3   // 3 = invert X+Y
+  #define DEFAULT_DIRECTION_INVERT_MASK 7   // 3 = invert X+Y //Peter: war 3
   #define DEFAULT_STEPPER_IDLE_LOCK_TIME 255// msec (0-254, 255 keeps steppers enabled)
   #define DEFAULT_STATUS_REPORT_MASK 0      // WPos enabled
   #define DEFAULT_JUNCTION_DEVIATION 0.01   // mm
@@ -124,13 +124,15 @@
   #define DEFAULT_INVERT_PROBE_PIN 0        // false
   #define DEFAULT_LASER_MODE 1              // true
   #define DEFAULT_HOMING_ENABLE 1           // true
-  #define DEFAULT_HOMING_DIR_MASK 1         // move top/left
+  #define DEFAULT_HOMING_DIR_MASK 5         // move top/left //Peter: war 1
   #define DEFAULT_HOMING_FEED_RATE 600.0     // mm/min //Peter: war 50
   #define DEFAULT_HOMING_SEEK_RATE 4800.0   // mm/min  //Peter: war 6000
   #define DEFAULT_HOMING_DEBOUNCE_DELAY 250 // msec (0-65k)
   #define DEFAULT_HOMING_PULLOFF 5.0        // mm //Peter: war 2.0mm, aber das reicht nicht für die Schalter. Ggf. Schalterposition nochmal anpassen.
-  #define HOMING_CYCLE_0 ((1<<X_AXIS)|(1<<Y_AXIS)) //Peter: home both X and Y simultanously
-
+  //#define HOMING_CYCLE_0 ((1<<X_AXIS)|(1<<Y_AXIS)) //Peter: home both X and Y simultanously
+  #define HOMING_CYCLE_0 ((1<<X_AXIS)|(1<<Y_AXIS))  // OPTIONAL: Then move X,Y at the same time.  //Peter: war s.o.
+  #define HOMING_CYCLE_1 (1<<Z_AXIS)                // REQUIRED: First move Z to clear workspace.  //Peter: war s.o.
+  
 #endif // end of DEFAULTS_K40
 
 #ifdef DEFAULTS_FABKIT
